@@ -13,7 +13,9 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy-reactive-jsonb'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jaxb'
     implementation 'io.quarkus:quarkus-jdbc-h2'
-    implementation 'io.quarkus:quarkus-redis-client'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.0.0'
+
+    //implementation 'io.quarkus:quarkus-redis-client'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy-reactive'
     testImplementation 'io.quarkus:quarkus-junit5'
@@ -29,13 +31,13 @@ java {
 }
 
 test {
+    useJUnitPlatform()
     systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
 }
-compileJava {
-    options.encoding = 'UTF-8'
-    options.compilerArgs << '-parameters'
-}
 
-compileTestJava {
-    options.encoding = 'UTF-8'
+quarkus {
+    java {
+        targetCompatibility = '17'
+    }
+   
 }

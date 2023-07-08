@@ -11,16 +11,16 @@ export class BlockListComponent {
 
   onCreateBlock() {
     const block = {
-      data: 'Teste',
+      data: 'Test',
 
     };
 
     this.http.post('http://localhost:8080/blocks', block).subscribe(
       (response) => {
-        console.log('Bloco criado com sucesso:', response);
+        console.log('Create Block with sucess:', response);
       },
       (error) => {
-        console.error('Erro ao criar bloco:', error);
+        console.error('Error creating block:', error);
       }
     );
   }

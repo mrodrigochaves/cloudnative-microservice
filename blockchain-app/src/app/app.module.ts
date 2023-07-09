@@ -7,6 +7,7 @@ import { BlockListComponent } from './block-list/block-list.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
